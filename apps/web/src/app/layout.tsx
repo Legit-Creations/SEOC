@@ -7,8 +7,6 @@ import { siteConfig } from "@/config/site";
 
 import "./globals.css";
 
-
-
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -34,18 +32,45 @@ export const metadata: Metadata = {
 
   applicationName: siteConfig.name,
 
+  keywords: [
+    "SEOC",
+    "Sweat Equity over Cash",
+    "commerce infrastructure",
+    "ecommerce development",
+    "landing page development",
+    "storefront optimization",
+    "conversion optimization",
+    "technical SEO",
+    "website performance",
+    "Next.js development",
+  ],
+
   manifest: "/manifest.webmanifest",
+
+  alternates: {
+    canonical: siteConfig.url,
+  },
 
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 
   openGraph: {
+    title: siteConfig.defaultTitle,
+    description: siteConfig.defaultDescription,
     type: "website",
     locale: siteConfig.locale,
     siteName: siteConfig.name,
     url: siteConfig.url,
+
     images: [
       {
         url: siteConfig.ogImage,
@@ -58,6 +83,8 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
+    title: siteConfig.defaultTitle,
+    description: siteConfig.defaultDescription,
     images: [siteConfig.ogImage],
   },
 
@@ -74,11 +101,20 @@ export const metadata: Metadata = {
         type: "image/png",
       },
     ],
+
+    apple: [
+      {
+        url: siteConfig.icons.icon192,
+      },
+    ],
+
+    shortcut: [siteConfig.icons.icon192],
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: siteConfig.theme.color,
+  themeColor: "#ffffff",
+  colorScheme: "light",
 };
 
 export default function RootLayout({
@@ -87,11 +123,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-      <html
-  lang="en"
-  className={`${inter.variable} ${ibmPlexSans.variable} h-full antialiased`}
+    <html
+      lang="en"
+      className={`${inter.variable} ${ibmPlexSans.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col bg-background text-foreground">
         {children}
 
         <Analytics />
