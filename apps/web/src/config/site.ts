@@ -1,12 +1,23 @@
 export const siteConfig = {
   name: "Sweat Equity over Cash",
   shortName: "SEOC",
-  defaultTitle: " Sweat Equity over Cash",
-  titleTemplate: "%s | Sweat Equity over Cash",
-  defaultDescription:
-  "Sweat Equity over Cash connects existing brands with skilled contributors through equity-based collaboration.",
-
-  url: "https://sweat-equity-over-capital.vercel.app",
+defaultTitle: "Sweat Equity over Cash",
+titleTemplate: "%s | Sweat Equity over Cash",
+defaultDescription:
+  "High-performance storefronts, landing pages, and commerce experiences engineered to improve speed, conversion, and customer experience.",
+  keywords: [
+  "ecommerce development",
+  "storefront optimization",
+  "landing page development",
+  "conversion optimization",
+  "next.js commerce",
+  "performance optimization",
+  "technical seo",
+  "commerce infrastructure",
+  "web performance",
+  "online store development",
+],
+  url: "https://seoc.legitcreations.com.ng",
 
   ogImage:
   "https://k7u1twdwvn2rk2wu.public.blob.vercel-storage.com/og-image.png",
